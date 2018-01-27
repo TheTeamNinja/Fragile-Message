@@ -9,19 +9,29 @@ ModelImporter:
     100002: Bloque2_Calle
     100004: //RootNode
     100006: Sphere
+    100008: Bloque1_Acera_001
+    100010: Bloque1_Calle
     400000: Bloque2_Acera_
     400002: Bloque2_Calle
     400004: //RootNode
     400006: Sphere
+    400008: Bloque1_Acera_001
+    400010: Bloque1_Calle
     2300000: Bloque2_Acera_
     2300002: Bloque2_Calle
     2300004: Sphere
+    2300006: Bloque1_Acera_001
+    2300008: Bloque1_Calle
     3300000: Bloque2_Acera_
     3300002: Bloque2_Calle
     3300004: Sphere
+    3300006: Bloque1_Acera_001
+    3300008: Bloque1_Calle
     4300000: Bloque2_Acera_
     4300002: Bloque2_Calle
     4300004: Sphere
+    4300006: Bloque1_Calle
+    4300008: Bloque1_Acera_001
     7400000: Default Take
     9500000: //RootNode
   materials:
