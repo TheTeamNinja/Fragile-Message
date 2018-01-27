@@ -11,34 +11,59 @@ ModelImporter:
     100006: Bloque1_Calle
     100008: Bloque1_Edificios
     100010: Cube
+    100012: Bloque1_Edificio
+    100014: Puerta
+    100016: Ventana_000
+    100018: Ventana_001
+    100020: Casa1
     400000: //RootNode
     400002: Bloque1_Acera
     400004: Bloque1_Acera_001
     400006: Bloque1_Calle
     400008: Bloque1_Edificios
     400010: Cube
+    400012: Bloque1_Edificio
+    400014: Puerta
+    400016: Ventana_000
+    400018: Ventana_001
+    400020: Casa1
     2300000: //RootNode
     2300002: Bloque1_Acera
     2300004: Bloque1_Acera_001
     2300006: Bloque1_Calle
     2300008: Bloque1_Edificios
     2300010: Cube
+    2300012: Bloque1_Edificio
+    2300014: Puerta
+    2300016: Ventana_000
+    2300018: Ventana_001
+    2300020: Casa1
     3300000: //RootNode
     3300002: Bloque1_Acera
     3300004: Bloque1_Acera_001
     3300006: Bloque1_Calle
     3300008: Bloque1_Edificios
     3300010: Cube
+    3300012: Bloque1_Edificio
+    3300014: Puerta
+    3300016: Ventana_000
+    3300018: Ventana_001
+    3300020: Casa1
     4300000: Cube
     4300002: Bloque1_Acera_001
     4300004: Bloque1_Edificios
     4300006: Bloque1_Acera
     4300008: Bloque1_Calle
+    4300010: Ventana_001
+    4300012: Ventana_000
+    4300014: Puerta
+    4300016: Bloque1_Edificio
+    4300018: Casa1
     7400000: Default Take
     9500000: //RootNode
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 1
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4

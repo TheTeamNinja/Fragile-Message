@@ -11,13 +11,19 @@ public class Game : Singleton<Game> {
 	public float waveWait;
 	public GameObject[] cars;
 	public Transform[] spawnCars;
+	public GameObject cameraIntro;
+	public GameObject cameraGamePlay;
+	public GameObject startPanel;
+	public Player player;
 
 	public bool playing;
 	
 	void Start ()
 	{
+		startPanel.SetActive(true);
 		playing = false;
-		StartCoroutine (SpawnWaves ());
+		cameraIntro.SetActive (true);
+		cameraGamePlay.SetActive (false);
 	}
 	
 	IEnumerator SpawnWaves() {
@@ -43,9 +49,19 @@ public class Game : Singleton<Game> {
 		}
 	}
 
+	public void InitGame()
+	{
+		startPanel.SetActive(false);
+		playing = false;
+		player.PlayIntro();
+	}
+
 	public void StartGame()
 	{
+		cameraIntro.SetActive (false);
+		cameraGamePlay.SetActive (true);
 		playing = true;
-		planeSpeed = 10;
+		planeSpeed = 5;
+		StartCoroutine (SpawnWaves ());
 	}
 }

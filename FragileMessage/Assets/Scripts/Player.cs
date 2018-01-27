@@ -14,11 +14,13 @@ public class Player : MonoBehaviour
     public float speed;
     public float tilt;
     
-    public Rigidbody rigidBody;
+    private Rigidbody rigidBody;
+    private Animator animator;
 
     void Start()
     {
-        //rigidBody = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -30,12 +32,19 @@ public class Player : MonoBehaviour
 
             rigidBody.velocity = movement * speed;
             rigidBody.position = new Vector3(Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax), 0, 0);
-            rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);    
+            rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
         }
     }
 
+    public void PlayIntro()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("playIntro");
+    }
+    
     public void ReadyToPlay()
     {
+        animator.enabled = false;
         rigidBody.isKinematic = false;
         Game.Instance.StartGame();
     }
