@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     public Boundary boundary;
     public float speed;
     public float tilt;
-    public Rigidbody rigidBody;
+    
+    private Rigidbody rigidBody;
 
     void Start()
     {

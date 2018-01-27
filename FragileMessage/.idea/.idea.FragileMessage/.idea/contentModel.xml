@@ -14,8 +14,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Car.cs" t="Include" />
           <e p="Environment.cs" t="Include" />
+          <e p="Game.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="Singleton.cs" t="Include" />
         </e>
       </e>
       <e p="FragileMessage.sln" t="IncludeFlat" />

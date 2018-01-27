@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour {
 
-	public float scrollSpeed;
 	public GameObject[] envBlocks;
-	public Transform spawnTransform;
+	public Transform spawnEnvironmentBlocks;
 
 	private float blockSize = 15.0f;
 	private GameObject blockA;
@@ -16,16 +15,19 @@ public class Environment : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		blockA = CreateBlock(spawnTransform, -2);
-		blockB = CreateBlock(spawnTransform, -1);
-		blockC = CreateBlock(spawnTransform, 0);
+		blockA = CreateBlock(spawnEnvironmentBlocks, -2);
+		blockB = CreateBlock(spawnEnvironmentBlocks, -1);
+		blockC = CreateBlock(spawnEnvironmentBlocks, 0);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		blockA.transform.Translate(0, 0, -1 * scrollSpeed * Time.deltaTime);
-		blockB.transform.Translate(0, 0, -1 * scrollSpeed * Time.deltaTime);
-		blockC.transform.Translate(0, 0, -1 * scrollSpeed * Time.deltaTime);
+	void Update ()
+	{
+		float planeSpeed = Game.Instance.planeSpeed;
+		
+		blockA.transform.Translate(0, 0, -1 * planeSpeed * Time.deltaTime);
+		blockB.transform.Translate(0, 0, -1 * planeSpeed * Time.deltaTime);
+		blockC.transform.Translate(0, 0, -1 * planeSpeed * Time.deltaTime);
 
 		if (blockA.transform.position.z <= -blockSize)
 		{
@@ -35,7 +37,7 @@ public class Environment : MonoBehaviour {
 
 	private void SwapBlocks()
 	{
-		Debug.Log("Swapping blocks...");
+		//Debug.Log("Swapping blocks...");
 
 		var deleteMeBlock = blockA;
 		blockA = blockB;
