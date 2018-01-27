@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : Singleton<Game> {
 
@@ -12,18 +13,26 @@ public class Game : Singleton<Game> {
 	public GameObject[] cars;
 	public Transform[] spawnCars;
 	public GameObject cameraIntro;
-	public GameObject cameraGamePlay;
+	public GameObject cameraGameplay;
 	public GameObject startPanel;
+	public GameObject gameoverPanel;
 	public Player player;
+	public Environment environment;
 
 	public bool playing;
 	
 	void Start ()
 	{
+		InitGame();
+	}
+
+	public void InitGame()
+	{
 		startPanel.SetActive(true);
+		gameoverPanel.SetActive(false);
 		playing = false;
 		cameraIntro.SetActive (true);
-		cameraGamePlay.SetActive (false);
+		cameraGameplay.SetActive (false);
 	}
 	
 	IEnumerator SpawnWaves() {
@@ -40,16 +49,10 @@ public class Game : Singleton<Game> {
 			}
 
 			yield return new WaitForSeconds (waveWait);
-
-			/*if (gameOver) {
-				restartButton.SetActive (true);
-				restart = true;
-				break;
-			}*/
 		}
 	}
 
-	public void InitGame()
+	public void GameIntro()
 	{
 		startPanel.SetActive(false);
 		playing = false;
@@ -59,9 +62,26 @@ public class Game : Singleton<Game> {
 	public void StartGame()
 	{
 		cameraIntro.SetActive (false);
-		cameraGamePlay.SetActive (true);
+		cameraGameplay.SetActive (true);
 		playing = true;
 		planeSpeed = 5;
 		StartCoroutine (SpawnWaves ());
+	}
+
+	public void GameOver()
+	{
+		gameoverPanel.SetActive(true);
+		planeSpeed = 0;
+		playing = false;
+	}
+
+	public void RestartGame()
+	{
+		environment.InitGame();
+		gameoverPanel.SetActive(false);
+		player.Restart();
+		GameIntro();
+		cameraGameplay.SetActive (false);
+		cameraIntro.SetActive (true);
 	}
 }

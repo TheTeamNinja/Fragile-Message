@@ -15,6 +15,24 @@ public class Environment : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		InitGame();
+	}
+
+	public void InitGame()
+	{
+		if (blockA != null)
+		{
+			Destroy(blockA);
+		}
+		if (blockB != null)
+		{
+			Destroy(blockB);
+		}
+		if (blockC != null)
+		{
+			Destroy(blockC);
+		}
+		
 		blockA = CreateBlock(spawnEnvironmentBlocks, -2);
 		blockB = CreateBlock(spawnEnvironmentBlocks, -1);
 		blockC = CreateBlock(spawnEnvironmentBlocks, 0);

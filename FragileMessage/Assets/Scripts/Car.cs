@@ -18,13 +18,13 @@ public class Car : MonoBehaviour {
 	void Update () {
 		transform.Translate(Vector3.back * speed * Time.deltaTime);
 
-		if (transform.position.z < -8)
+		if (transform.position.z < -8  || !Game.Instance.playing)
 		{
 			Destroy(this.gameObject);
 		}
 	}
 
-	private void OnCollisionEnter(Collision other)
+	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.CompareTag("Car"))
 		{

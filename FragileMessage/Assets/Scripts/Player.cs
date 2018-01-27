@@ -31,14 +31,27 @@ public class Player : MonoBehaviour
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
 
             rigidBody.velocity = movement * speed;
-            rigidBody.position = new Vector3(Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax), 0, 0);
+            rigidBody.position = new Vector3(Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax), rigidBody.position.y, rigidBody.position.z);
             rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
         }
     }
+    
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Car"))
+        {
+            Game.Instance.GameOver();
+        }
+    }
 
-    public void PlayIntro()
+    public void Restart()
     {
         animator.enabled = true;
+        animator.SetTrigger("restart");
+    }
+    
+    public void PlayIntro()
+    {
         animator.SetTrigger("playIntro");
     }
     
