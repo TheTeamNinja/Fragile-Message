@@ -14,11 +14,11 @@ public class Player : MonoBehaviour
     public float speed;
     public float tilt;
     
-    private Rigidbody rigidBody;
+    public Rigidbody rigidBody;
 
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
+        //rigidBody = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -32,5 +32,11 @@ public class Player : MonoBehaviour
             rigidBody.position = new Vector3(Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax), 0, 0);
             rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);    
         }
+    }
+
+    public void ReadyToPlay()
+    {
+        rigidBody.isKinematic = false;
+        Game.Instance.StartGame();
     }
 }

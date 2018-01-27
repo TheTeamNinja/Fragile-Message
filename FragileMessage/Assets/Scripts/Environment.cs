@@ -7,7 +7,7 @@ public class Environment : MonoBehaviour {
 	public GameObject[] envBlocks;
 	public Transform spawnEnvironmentBlocks;
 
-	private float blockSize = 15.0f;
+	private float blockSize = 27f;
 	private GameObject blockA;
 	private GameObject blockB;
 	private GameObject blockC;

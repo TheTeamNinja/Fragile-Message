@@ -1,25 +1,27 @@
 fileFormatVersion: 2
-guid: 618c94ae29fba4ebf8e9e857e1a46968
-timeCreated: 1517059253
+guid: f2b55910535214d059d6f22b9f51c849
+timeCreated: 1517063591
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Cube
-    100002: //RootNode
-    100004: Plane
-    400000: Cube
-    400002: //RootNode
-    400004: Plane
-    2300000: Cube
-    2300002: Plane
-    2300004: //RootNode
-    3300000: Cube
-    3300002: Plane
-    3300004: //RootNode
-    4300000: Plane
-    4300002: Cube
-    4300004: Aircraft
+    100000: Bloque2_Acera_
+    100002: Bloque2_Calle
+    100004: //RootNode
+    100006: Sphere
+    400000: Bloque2_Acera_
+    400002: Bloque2_Calle
+    400004: //RootNode
+    400006: Sphere
+    2300000: Bloque2_Acera_
+    2300002: Bloque2_Calle
+    2300004: Sphere
+    3300000: Bloque2_Acera_
+    3300002: Bloque2_Calle
+    3300004: Sphere
+    4300000: Bloque2_Acera_
+    4300002: Bloque2_Calle
+    4300004: Sphere
     7400000: Default Take
     9500000: //RootNode
   materials:

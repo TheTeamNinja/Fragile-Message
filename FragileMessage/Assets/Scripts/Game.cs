@@ -42,4 +42,10 @@ public class Game : Singleton<Game> {
 			}*/
 		}
 	}
+
+	public void StartGame()
+	{
+		playing = true;
+		planeSpeed = 10;
+	}
 }
