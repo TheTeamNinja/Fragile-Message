@@ -40,12 +40,14 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car"))
         {
+            rigidBody.constraints =  RigidbodyConstraints.FreezePositionY;
             Game.Instance.GameOver();
         }
     }
 
     public void Restart()
     {
+        rigidBody.constraints =  RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         animator.enabled = true;
         animator.SetTrigger("restart");
     }

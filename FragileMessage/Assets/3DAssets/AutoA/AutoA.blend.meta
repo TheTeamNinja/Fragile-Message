@@ -1,42 +1,22 @@
 fileFormatVersion: 2
-guid: f2b55910535214d059d6f22b9f51c849
-timeCreated: 1517063591
+guid: d05ea68fb3fad4c8c924a6684b3e9109
+timeCreated: 1517088100
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Bloque2_Acera_
-    100002: Bloque2_Calle
-    100004: //RootNode
-    100006: Sphere
-    100008: Bloque1_Acera_001
-    100010: Bloque1_Calle
-    100012: Bloque2_Acera
-    400000: Bloque2_Acera_
-    400002: Bloque2_Calle
-    400004: //RootNode
-    400006: Sphere
-    400008: Bloque1_Acera_001
-    400010: Bloque1_Calle
-    400012: Bloque2_Acera
-    2300000: Bloque2_Acera_
-    2300002: Bloque2_Calle
-    2300004: Sphere
-    2300006: Bloque1_Acera_001
-    2300008: Bloque1_Calle
-    2300010: Bloque2_Acera
-    3300000: Bloque2_Acera_
-    3300002: Bloque2_Calle
-    3300004: Sphere
-    3300006: Bloque1_Acera_001
-    3300008: Bloque1_Calle
-    3300010: Bloque2_Acera
-    4300000: Bloque2_Acera_
-    4300002: Bloque2_Calle
-    4300004: Sphere
-    4300006: Bloque1_Calle
-    4300008: Bloque1_Acera_001
-    4300010: Bloque2_Acera
+    100000: //RootNode
+    100002: AutoA
+    100004: Ruedas
+    400000: //RootNode
+    400002: AutoA
+    400004: Ruedas
+    2300000: AutoA
+    2300002: Ruedas
+    3300000: AutoA
+    3300002: Ruedas
+    4300000: Ruedas
+    4300002: AutoA
     7400000: Default Take
     9500000: //RootNode
   materials:
