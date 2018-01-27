@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public class Car : MonoBehaviour {
@@ -9,10 +10,13 @@ public class Car : MonoBehaviour {
 	public float maxSpeedMultiplier = 2.0f;
 
 	private AudioSource horn;
+	private int points;
 	
 	void Start () {
 		speed = Game.Instance.planeSpeed * Random.Range(minSpeedMultiplier, maxSpeedMultiplier);
 		horn = GetComponent<AudioSource>();
+
+		points = (int) (speed * 10);
 	}
 	
 	void Update () {
@@ -21,6 +25,8 @@ public class Car : MonoBehaviour {
 		if (transform.position.z < -8  || !Game.Instance.playing)
 		{
 			Destroy(this.gameObject);
+			Game.Instance.AddScore(points);
+			
 		}
 	}
 

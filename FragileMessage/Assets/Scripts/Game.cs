@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game : Singleton<Game> {
 
@@ -16,10 +17,13 @@ public class Game : Singleton<Game> {
 	public GameObject cameraGameplay;
 	public GameObject startPanel;
 	public GameObject gameoverPanel;
+	public GameObject gamePanel;
 	public Player player;
 	public Environment environment;
-
+	public Text scoreText;
 	public bool playing;
+	
+	private int score;
 	
 	void Start ()
 	{
@@ -30,6 +34,7 @@ public class Game : Singleton<Game> {
 	{
 		startPanel.SetActive(true);
 		gameoverPanel.SetActive(false);
+		gamePanel.SetActive(false);
 		playing = false;
 		cameraIntro.SetActive (true);
 		cameraGameplay.SetActive (false);
@@ -54,6 +59,8 @@ public class Game : Singleton<Game> {
 
 	public void GameIntro()
 	{
+		score = 0;
+		scoreText.text = score.ToString();
 		startPanel.SetActive(false);
 		playing = false;
 		player.PlayIntro();
@@ -61,6 +68,7 @@ public class Game : Singleton<Game> {
 
 	public void StartGame()
 	{
+		gamePanel.SetActive(true);
 		cameraIntro.SetActive (false);
 		cameraGameplay.SetActive (true);
 		playing = true;
@@ -70,6 +78,7 @@ public class Game : Singleton<Game> {
 
 	public void GameOver()
 	{
+		gamePanel.SetActive(false);
 		gameoverPanel.SetActive(true);
 		planeSpeed = 0;
 		playing = false;
@@ -83,5 +92,11 @@ public class Game : Singleton<Game> {
 		GameIntro();
 		cameraGameplay.SetActive (false);
 		cameraIntro.SetActive (true);
+	}
+
+	public void AddScore(int points)
+	{
+		score += points;
+		scoreText.text = score.ToString();
 	}
 }
