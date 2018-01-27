@@ -23,11 +23,14 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
+        if (Game.Instance.playing)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
 
-        rigidBody.velocity = movement * speed;
-        rigidBody.position = new Vector3(Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax), 0, 0);
-        rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);
+            rigidBody.velocity = movement * speed;
+            rigidBody.position = new Vector3(Mathf.Clamp(rigidBody.position.x, boundary.xMin, boundary.xMax), 0, 0);
+            rigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, rigidBody.velocity.x * -tilt);    
+        }
     }
 }

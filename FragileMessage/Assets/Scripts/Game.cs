@@ -11,15 +11,19 @@ public class Game : Singleton<Game> {
 	public float waveWait;
 	public GameObject[] cars;
 	public Transform[] spawnCars;
+
+	public bool playing;
 	
-	void Start () {
+	void Start ()
+	{
+		playing = false;
 		StartCoroutine (SpawnWaves ());
 	}
 	
 	IEnumerator SpawnWaves() {
 		yield return new WaitForSeconds (startWait);
 
-		while (true) {
+		while (playing) {
 			for (int i = 0; i < hazardCount; i++) {
 				GameObject hazard = cars[Random.Range(0, cars.Length)];
 				Transform spawnCar = spawnCars[Random.Range(0, spawnCars.Length)];
