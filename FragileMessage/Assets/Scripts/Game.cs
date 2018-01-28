@@ -59,6 +59,7 @@ public class Game : Singleton<Game>
                 yield return new WaitForSeconds(spawnWait);
             }
 
+            planeSpeed++;
             yield return new WaitForSeconds(waveWait);
         }
     }
@@ -100,6 +101,12 @@ public class Game : Singleton<Game>
         yourScoreText.text = "Your Score: " + score;
     }
 
+    public void AddScore(int points)
+    {
+        score += points;
+        scoreText.text = score.ToString();
+    }
+    
     public void RestartGame()
     {
         environment.InitGame();
@@ -110,9 +117,8 @@ public class Game : Singleton<Game>
         cameraIntro.SetActive(true);
     }
 
-    public void AddScore(int points)
+    public void ExitGame()
     {
-        score += points;
-        scoreText.text = score.ToString();
-    }
+        Application.Quit();
+    }    
 }

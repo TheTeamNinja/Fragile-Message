@@ -9,19 +9,29 @@ ModelImporter:
     100002: Bloque3_Calle
     100004: //RootNode
     100006: Cone
+    100008: Bloque3_Acera
+    100010: Farol
     400000: Bloque3_Acera_
     400002: Bloque3_Calle
     400004: //RootNode
     400006: Cone
+    400008: Bloque3_Acera
+    400010: Farol
     2300000: Bloque3_Acera_
     2300002: Bloque3_Calle
     2300004: Cone
+    2300006: Bloque3_Acera
+    2300008: Farol
     3300000: Bloque3_Acera_
     3300002: Bloque3_Calle
     3300004: Cone
+    3300006: Bloque3_Acera
+    3300008: Farol
     4300000: Bloque3_Acera_
     4300002: Bloque3_Calle
     4300004: Cone
+    4300006: Bloque3_Acera
+    4300008: Farol
     7400000: Default Take
     9500000: //RootNode
   materials:

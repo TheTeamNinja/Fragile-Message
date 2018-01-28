@@ -13,14 +13,18 @@ public class Player : MonoBehaviour
     public Boundary boundary;
     public float speed;
     public float tilt;
-    
+    public AudioClip launch;
+    public AudioClip crash;
+
     private Rigidbody rigidBody;
     private Animator animator;
-
+    private AudioSource audioSource;
+    
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -40,6 +44,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car"))
         {
+            audioSource.PlayOneShot(crash);
             rigidBody.constraints =  RigidbodyConstraints.FreezePositionY;
             Game.Instance.GameOver();
         }
@@ -55,6 +60,11 @@ public class Player : MonoBehaviour
     public void PlayIntro()
     {
         animator.SetTrigger("playIntro");
+    }
+
+    public void PlayLauchAudio()
+    {
+        audioSource.PlayOneShot(launch);
     }
     
     public void ReadyToPlay()

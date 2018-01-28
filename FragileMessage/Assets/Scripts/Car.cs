@@ -6,9 +6,9 @@ using UnityEngine;
 public class Car : MonoBehaviour {
 
 	public float speed;
-	public float minSpeedMultiplier = 1.0f;
-	public float maxSpeedMultiplier = 2.0f;
-
+	
+	private float minSpeedMultiplier = 1.5f;
+	private float maxSpeedMultiplier = 3.0f;
 	private AudioSource horn;
 	private int points;
 	
