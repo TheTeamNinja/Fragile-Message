@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Game : Singleton<Game>
@@ -23,6 +21,7 @@ public class Game : Singleton<Game>
     public Text scoreText;
     public Text highScoreText;
     public Text yourScoreText;
+    public Text messageText;
     public bool playing;
 
     private int score;
@@ -30,6 +29,8 @@ public class Game : Singleton<Game>
 
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
+
         InitGame();
     }
 
@@ -96,7 +97,14 @@ public class Game : Singleton<Game>
             highScore = score;
 
             PlayerPrefs.SetInt("highScore", highScore);
+
+            messageText.text = InspirationalMessages.GetMessage(true);
         }
+        else
+        {
+            messageText.text = InspirationalMessages.GetMessage(false);
+        }
+
         highScoreText.text = "High Score: " + highScore;
         yourScoreText.text = "Your Score: " + score;
     }
@@ -106,7 +114,7 @@ public class Game : Singleton<Game>
         score += points;
         scoreText.text = score.ToString();
     }
-    
+
     public void RestartGame()
     {
         environment.InitGame();
@@ -119,6 +127,7 @@ public class Game : Singleton<Game>
 
     public void ExitGame()
     {
+        //EditorApplication.isPlaying = false;
         Application.Quit();
-    }    
+    }
 }

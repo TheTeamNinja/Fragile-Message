@@ -182,6 +182,7 @@
           <e p="Car.cs" t="Include" />
           <e p="Environment.cs" t="Include" />
           <e p="Game.cs" t="Include" />
+          <e p="InspirationalMessages.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
         </e>
